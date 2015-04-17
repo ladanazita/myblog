@@ -1,6 +1,23 @@
-<h1>Title:</h1>
-<div><%= @post.title%></div>
-<h1>Description:</h1>
-<div><%= @post.post%> </div>
+<h1> Blog </h1>
+  <h3>Title:</h3>
+    <div><%= @post.title%></div>
+  <h3>Description:</h3>
+    <div><%= @post.post%> </div>
+  <h2>Comments</h2>
+  <%= render @post.comments %>
+  <h2> Add Comment </h2>
+    <%= form_for([@post, @post.comments.build]) do |f| %>
+      <div>
+        <%= f.label :commenter %></br>
+        <%= f.text_field :commenter %> </br>
+      </div>
+      <div>
+        <%= f.label :body %>
+        <%= f.text_field :body %>
+      </div>
+      <div>
+        <%=f.submit %>
+      </div>
+    <% end %>
 <%= link_to 'Edit', edit_post_path(@post) %>
 <%= link_to 'Back', posts_path %>
