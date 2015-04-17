@@ -7,6 +7,10 @@
 <div>
 <%= post.post %>
 </div>
+<div>
+<%= link_to 'Post', post_path(post) %>
+<%= link_to 'Edit', edit_post_path(post) %>
+</div>
 <%end%>
 </div>
 <%= link_to 'New Post', new_post_path %>
