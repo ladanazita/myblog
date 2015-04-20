@@ -8,10 +8,6 @@
   <h2> Add Comment </h2>
     <%= form_for([@post, @post.comments.build]) do |f| %>
       <div>
-        <%= f.label :commenter %></br>
-        <%= f.text_field :commenter %> </br>
-      </div>
-      <div>
         <%= f.label :body %>
         <%= f.text_field :body %>
       </div>
