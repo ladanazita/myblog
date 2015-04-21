@@ -1,16 +1,18 @@
+<% @post.comments.each do |comment| %>
 <div>
   <strong> Comment: </strong>
   <%= comment.body %>
 </div>
 <div>
-<% if current_user %>
-  Posted by <%= current_user.name %>
-<% else %>
-  Anonymous
-<% end %>
+  <% if comment.user %>
+   Posted by <%= comment.user.name %>
+  <% else %>
+    Anonymous
+  <% end %>
 </div>
 <div>
   <%= link_to 'Destroy Comment', [comment.post, comment],
     method: :delete,
     data: {confirm: 'Are you sure?'} %>
 </div>
+<%end%>

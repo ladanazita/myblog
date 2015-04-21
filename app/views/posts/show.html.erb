@@ -4,7 +4,7 @@
   <h3>Description:</h3>
     <div><%= @post.post%> </div>
   <h2>Comments</h2>
-  <%= render @post.comments %>
+  <%= render 'comments/comment' %>
   <h2> Add Comment </h2>
     <%= form_for([@post, @post.comments.build]) do |f| %>
       <div>
